@@ -1,0 +1,16 @@
+<div class="row">
+  {{restaurant.name}}
+</div>
+<div class="row">
+  Reviews:
+  <button (click)='viewMenu()' [disabled]='showMenu'>View Menu</button>
+  <div *ngFor="let review of reviews; let i=index">
+      <p>**User {{mockUserIds[i]}}**</p>
+      <p>{{review}}</p>
+  </div>
+</div>
+
+<div *ngIf='showMenu'>
+  <img [src]="menusrc">
+</div>
+

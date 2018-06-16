@@ -1,0 +1,18 @@
+<select [(ngModel)]="selectedAreaId">
+  <option *ngFor='let area of areas' [value]="area.id">{{area.name}}</option>
+</select>
+
+<select [(ngModel)]="selectedRestaurantTypeId">
+  <option *ngFor='let restaurantType of restaurantTypes' [value]="restaurantType.id">{{restaurantType.name}}</option>
+</select>
+
+<button (click)='findRestaurants()'>Find</button>
+
+<div class="row">
+  <div class="col-md-4">
+    <ul>
+        <li *ngFor='let restaurant of restaurants' (click)="navigateToRestaurantreview(restaurant.id)">{{restaurant.name}}
+        </li>
+    </ul>
+  </div>
+</div>
